@@ -1,8 +1,3 @@
-using System;
-using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
-using System.Windows.Forms;
 using System.Data;
 using System.Text;
 using System.Net.Sockets;
@@ -19,7 +14,7 @@ namespace SocketClient
 	{
 		private System.Windows.Forms.TextBox msgViewBox;
 		private System.Windows.Forms.TextBox sendBox;
-		private System.Windows.Forms.Button sendButton;
+		public System.Windows.Forms.Button sendButton;
 		private System.Windows.Forms.Button connectButton;
 		private System.Windows.Forms.TextBox usernameBox;
 		private System.Windows.Forms.Label label1;
@@ -55,11 +50,6 @@ namespace SocketClient
 				{
 					//Close the socket
 					Disconnect();
-					MessageBox.Show("Disconnected!!");
-					return;
-				}
-				//Send the Server message for parsing
-				BuildText(recByte,0,byteCount);
 				//Unless its the first time start Asynchronous Read
 				//Again
 				if(!firstTime)
