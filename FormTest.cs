@@ -14,7 +14,7 @@ namespace SocketClient
 	{
 		private System.Windows.Forms.TextBox msgViewBox;
 		private System.Windows.Forms.TextBox sendBox;
-		public System.Windows.Forms.Button sendButton;
+		private System.Windows.Forms.Button sendButton;
 		private System.Windows.Forms.Button connectButton;
 		private System.Windows.Forms.TextBox usernameBox;
 		private System.Windows.Forms.Label label1;
