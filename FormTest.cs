@@ -1,8 +1,3 @@
-using System;
-using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
-using System.Windows.Forms;
 using System.Data;
 using System.Text;
 using System.Net.Sockets;
@@ -55,11 +50,6 @@ namespace SocketClient
 				{
 					//Close the socket
 					Disconnect();
-					MessageBox.Show("Disconnected!!");
-					return;
-				}
-				//Send the Server message for parsing
-				BuildText(recByte,0,byteCount);
 				//Unless its the first time start Asynchronous Read
 				//Again
 				if(!firstTime)

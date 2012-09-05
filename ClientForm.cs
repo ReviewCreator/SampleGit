@@ -1,9 +1,3 @@
-using System;
-using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
-using System.Windows.Forms;
-using System.Data;
 using System.Text;
 using System.Net.Sockets;
 
@@ -19,7 +13,7 @@ namespace SocketClient
 	{
 		private System.Windows.Forms.TextBox msgViewBox;
 		private System.Windows.Forms.TextBox sendBox;
-		private System.Windows.Forms.Button sendButton;
+		public System.Windows.Forms.Button sendButton;
 		private System.Windows.Forms.Button connectButton;
 		private System.Windows.Forms.TextBox usernameBox;
 		private System.Windows.Forms.Label label1;
@@ -35,11 +29,6 @@ namespace SocketClient
 		private StringBuilder myBuilder;
 
 		//Constructor
-		public Form1()
-		{
-			InitializeComponent();
-			myBuilder = new System.Text.StringBuilder();
-		}
 
 		//Method use to process incomming messages
 		public void GetMsg(IAsyncResult ar)
@@ -73,6 +62,13 @@ namespace SocketClient
 				Disconnect();
 				MessageBox.Show("Exception Occured :"+ed.ToString());
 			}
+		
+		
+		
+		
+		
+		
+		
 		}
 
 		//Method to Process Server Response
