@@ -1,8 +1,3 @@
-using System.Text;
-using System.Net.Sockets;
-
-
-///         
 //
 ///
 namespace SocketClient
