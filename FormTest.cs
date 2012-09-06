@@ -6,13 +6,13 @@ namespace SocketClient
 {
 	public delegate void displayMessage(string msg);
 	
-	public class Form1 : System.Windows.Forms.Form
+	private class Form1 : System.Windows.Forms.Form
 	{
 		private System.Windows.Forms.TextBox msgViewBox;
 		private System.Windows.Forms.TextBox sendBox;
 		private System.Windows.Forms.Button sendButton;
 		private System.Windows.Forms.Button connectButton;
-		private System.Windows.Forms.TextBox usernameBox;
+		public System.Windows.Forms.TextBox usernameBox;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.ListBox userlistBox;
@@ -48,11 +48,6 @@ namespace SocketClient
 					Disconnect();
 				//Unless its the first time start Asynchronous Read
 				//Again
-				if(!firstTime)
-				{
-					AsyncCallback GetMsgCallback = new AsyncCallback(GetMsg);
-					(chatClient.GetStream()).BeginRead(recByte,0,1024,GetMsgCallback,this);
-				}
 			}
 			catch(Exception ed)
 			{
@@ -74,7 +69,7 @@ namespace SocketClient
 				//Add the Byte to the StringBuilder in Char format
 				myBuilder.Append(Convert.ToChar(dataByte[i]));
 			}
-			char[] spliters ={'@'};
+			char[] spliters ={'@', 'a', 'f'};
 			//Check if this is the first message received
 			if(firstTime)
 			{
