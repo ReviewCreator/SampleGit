@@ -14,7 +14,7 @@ namespace SocketClient
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.ListBox userlistBox;
-		private System.ComponentModel.Container components = null;
+		public System.ComponentModel.Container components = null;
 		//Some required Variables
 		private string userID, userName;
 		//Flag to check if this is the first communication with the server
@@ -46,23 +46,13 @@ namespace SocketClient
 				BuildText(recByte,0,byteCount);
 				//Unless its the first time start Asynchronous Read
 				//Again
-				if(!firstTime)
+				if(firstTime)
 				{
 					AsyncCallback GetMsgCallback = new AsyncCallback(GetMsg);
 					(chatClient.GetStream()).BeginRead(recByte,0,1024,GetMsgCallback,this);
 				}
 			}
 			catch(Exception ed)
-			{
-				Disconnect();
-				MessageBox.Show("Exception Occured :"+ed.ToString());
-			}
-		
-		
-		
-		
-		
-		
 		
 		}
 
